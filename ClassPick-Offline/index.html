@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ClassPick | Random Student Picker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+
+    <div>
+        <h2>Class<span>Pick</span></h2>
+        <small>Smart Random Student Picker</small>
+    </div>
+
+    <div class="account">
+        <span id="welcomeUser">Administrator</span>
+        <button id="logoutButton" class="secondary">Logout</button>
+    </div>
+
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <p class="eyebrow">CLASSROOM MANAGEMENT</p>
+
+        <h1>Random Student <span>Picker</span></h1>
+
+        <p class="muted">
+            Add students and randomly select someone for your presentation.
+        </p>
+    </section>
+
+    <section class="dashboard">
+
+        <!-- Random Picker -->
+
+        <div class="panel picker-panel">
+
+            <h2>Random Picker</h2>
+
+            <p class="muted">
+                Each student is picked once per round.
+            </p>
+
+            <div class="picker-circle">
+                <div id="result">?</div>
+            </div>
+
+            <h2 id="studentName" class="selected-name">
+                Ready to Pick!
+            </h2>
+
+            <p id="studentRoll" class="muted">
+                Roll Number: --
+            </p>
+
+            <button id="pickButton">
+                Pick Random Student
+            </button>
+
+            <button id="resetButton" class="secondary">
+                Start New Round
+            </button>
+
+            <p id="roundInfo" class="round-info">
+                0 students selected this round.
+            </p>
+
+        </div>
+
+        <!-- Student Management -->
+
+        <div class="panel">
+
+            <div class="panel-heading">
+                <h2>Manage Students</h2>
+
+                <span id="studentCount" class="count">
+                    0 / 50 Students
+                </span>
+            </div>
+
+            <form id="studentForm">
+
+                <label>Student Name</label>
+
+                <input
+                    type="text"
+                    id="nameInput"
+                    maxlength="100"
+                    placeholder="Enter student name"
+                    required
+                >
+
+                <label>Roll Number</label>
+
+                <input
+                    type="text"
+                    id="rollInput"
+                    maxlength="30"
+                    placeholder="Enter roll number"
+                    required
+                >
+
+                <button type="submit" id="addButton">
+                    Add Student
+                </button>
+
+            </form>
+
+            <p id="statusMessage" class="message"></p>
+
+            <div class="list-heading">
+
+                <h3>Student List</h3>
+
+                <button id="clearButton" class="danger">
+                    Clear All
+                </button>
+
+            </div>
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search name or roll number..."
+            >
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Sr.#</th>
+                            <th>Student Name</th>
+                            <th>Roll No.</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentList"></tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        ClassPick © 2026 | Offline Classroom Tool
+    </footer>
+
+</main>
+
+<script src="app.js"></script>
+
+</body>
+</html>
