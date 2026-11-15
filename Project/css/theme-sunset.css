@@ -1,0 +1,85 @@
+/* ============================================================
+   NeuraLab – THEME 3: "Sunset Ember"
+   A warm, cosy dark theme: espresso browns, amber & rose accents.
+   ------------------------------------------------------------
+   HOW TO USE (no JavaScript needed):
+     1. Keep  <link rel="stylesheet" href="css/style.css">  active
+     2. Uncomment this file's link right AFTER style.css
+     3. Make sure only ONE theme file is active at a time
+   ============================================================ */
+
+:root {
+  /* base palette – warm dark */
+  --bg: #191108;
+  --bg-2: #221709;
+  --card: #2a1c10;
+  --line: rgba(255, 205, 150, .16);
+  --text: #ffeedd;
+  --muted: #d9bda3;
+  --accent: #fb923c;
+  --accent-2: #f43f5e;
+  --ok: #4ade80;
+  --warn: #fbbf24;
+  --danger: #f87171;
+  --grad: linear-gradient(120deg, #fbbf24 0%, #f97316 55%, #ef4444 100%);
+  --radius: 12px;
+  --shadow: 0 18px 40px rgba(0, 0, 0, .55);
+
+  /* themeable tokens */
+  --btn-text: #2d1204;
+  --header-bg: rgba(25, 17, 8, .9);
+  --field: #1e140a;
+  --media-bg: #120c06;
+  --glow-1: rgba(249, 115, 22, .15);
+  --glow-2: rgba(244, 63, 94, .12);
+  --hero-glow: rgba(249, 115, 22, .28);
+  --footer-overlay: rgba(34, 23, 9, .92);
+  --tint: rgba(251, 146, 60, .12);
+  --tint-strong: rgba(251, 146, 60, .20);
+  --border-soft: rgba(251, 146, 60, .32);
+  --border-strong: rgba(251, 146, 60, .55);
+  --accent-glow: rgba(249, 115, 22, .35);
+  --indigo-glow: rgba(244, 63, 94, .40);
+  --cta-1: rgba(251, 146, 60, .14);
+  --cta-2: rgba(244, 63, 94, .16);
+  --cta-border: rgba(244, 63, 94, .38);
+}
+
+/* --- classic display headings --- */
+h1, h2, h3,
+.section-title,
+.page-head h1,
+.cta-band h2 {
+  font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  letter-spacing: .01em;
+}
+
+/* --- warm-tinted interactive states --- */
+.main-nav a:hover {
+  background: rgba(255, 238, 221, .08);
+  color: var(--text);
+}
+
+tbody tr:hover {
+  background: rgba(255, 205, 150, .06);
+}
+
+details.faq:hover {
+  border-color: var(--accent);
+}
+
+.btn-primary {
+  box-shadow: 0 10px 24px rgba(249, 115, 22, .38);
+}
+
+.kicker {
+  letter-spacing: .22em;
+}
+
+/* --- inline code --- */
+code {
+  background: rgba(255, 238, 221, .09);
+  padding: .1em .4em;
+  border-radius: 5px;
+  font-size: .92em;
+}

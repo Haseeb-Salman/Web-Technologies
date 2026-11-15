@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — NeuraLab</title>
+  <meta name="description" content="Contact the NeuraLab project team — questions, feedback and ideas about the AI website.">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+
+ <!-- Theme Changing -->
+  
+  <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/theme-light.css"> -->
+  <!-- <link rel="stylesheet" href="css/theme-sunset.css"> -->
+</head>
+<body>
+
+  <!-- ===== Header & Navigation ===== -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">
+        <img src="images/logo.svg" alt="NeuraLab logo" class="brand-logo">
+        <span>Neura<em>Lab</em></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About AI</a></li>
+          <li><a href="applications.html">Applications</a></li>
+          <li><a href="ethics.html">Ethics &amp; Future</a></li>
+          <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Page head ===== -->
+    <section class="container page-head">
+      <span class="kicker">Get in touch</span>
+      <h1>Questions? Ideas? <span class="grad-text">Say hello</span></h1>
+      <p>This site is a course project — feedback is extremely welcome. Use the form
+         (it opens your own e-mail app, no server needed) or check the FAQ below.</p>
+    </section>
+
+    <!-- ===== Form + Info ===== -->
+    <section class="container section contact-grid">
+
+      <form class="form" action="mailto:neuralab@example.com" method="post" enctype="text/plain">
+        <h2>Send a message</h2>
+
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" placeholder="Ada Lovelace" required>
+
+        <label for="email">Your e-mail</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <label for="topic">Topic</label>
+        <select id="topic" name="topic">
+          <option>General question about AI</option>
+          <option>Feedback on the website</option>
+          <option>Report a broken link or image</option>
+          <option>Ideas for a new section</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Type your message here…" required></textarea>
+
+        <button type="submit" class="btn btn-primary">Send message</button>
+        <p class="form-note">Note: because this is a backend-free project, submitting opens your
+           default mail program with the message pre-filled.</p>
+      </form>
+
+      <div>
+        <ul class="info-list">
+          <li>✉️ <span><strong>E-mail</strong>neuralab@example.com</span></li>
+          <li>📍 <span><strong>Location</strong>Web Technologies Lab — Room 204</span></li>
+          <li>🕐 <span><strong>Office hours</strong>Sundays, 14:00 – 16:00 (during the semester)</span></li>
+          <li>🛠️ <span><strong>Built with</strong>HTML5 + CSS3 only — no JavaScript, no backend</span></li>
+        </ul>
+
+        <figure class="gif-frame">
+          <img src="https://www.w3schools.com/html/smiley.gif" alt="Classic yellow smiley face GIF" width="72" height="72">
+          <figcaption>
+            <h3>No question is too small</h3>
+            <p>Curiosity is the first step of every good scientist — and every good developer.</p>
+          </figcaption>
+        </figure>
+      </div>
+
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="container section">
+      <div class="section-head">
+        <span class="kicker">FAQ</span>
+        <h2 class="section-title">Frequently asked <span class="grad-text">questions</span></h2>
+        <p class="section-sub">Click a question to reveal the answer — using only the HTML <code>&lt;details&gt;</code> element.</p>
+      </div>
+
+      <details class="faq" open>
+        <summary>Is this website using any artificial intelligence?</summary>
+        <p>The website itself is pure HTML and CSS. Its <em>content</em> is about AI, and it was
+           written with the help of an AI assistant — which felt appropriate for the topic!</p>
+      </details>
+
+      <details class="faq">
+        <summary>Why are there no JavaScript files?</summary>
+        <p>The project brief asked for HTML/CSS only. Everything you see — navigation, animations,
+           the FAQ accordion and even the videos — works without a single line of JavaScript.
+           Even the robot and the neural network are animated with pure SVG.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Some images or videos don't load — is something broken?</summary>
+        <p>A few media files (2 GIFs, 2 videos, 1 photo) are loaded from public CDNs, so an
+           internet connection is needed for them. All custom artwork is local SVG and works
+           completely offline.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Can I use this design for my own assignment?</summary>
+        <p>You can learn from the structure and CSS techniques (grid, flexbox, custom properties,
+           animations), but submitting someone else's work as your own would be academic
+           dishonesty — and rather ironic on a page about responsible technology.</p>
+      </details>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="container">
+      <div class="cta-band">
+        <h2>Glad you stopped by</h2>
+        <p>Re-read a page, share it with a classmate, or start building your own AI-powered idea.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="index.html">Back to home</a>
+          <a class="btn btn-ghost" href="applications.html">See applications</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a class="brand" href="index.html">
+            <img src="images/logo.svg" alt="NeuraLab logo" class="brand-logo">
+            <span>Neura<em>Lab</em></span>
+          </a>
+          <p>A student-built guide to Artificial Intelligence — made with nothing but HTML &amp; CSS for the Web Technologies course.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About AI</a></li>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="ethics.html">Ethics &amp; Future</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Learn more</h4>
+          <ul>
+            <li><a href="https://www.w3schools.com/html/" target="_blank" rel="noopener">W3Schools HTML</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener">MDN Web Docs</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank" rel="noopener">Wikipedia: AI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Stay curious</h4>
+          <p>AI changes fast. Question everything, learn constantly, and build responsibly.</p>
+          <p>
+            <span class="tag">#MachineLearning</span>
+            <span class="tag">#DeepLearning</span>
+            <span class="tag">#GenerativeAI</span>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 NeuraLab — Artificial Intelligence, Explained.</span>
+        <span>Built with HTML &amp; CSS only · Web Technologies Project</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

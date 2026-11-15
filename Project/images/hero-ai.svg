@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 480" role="img" aria-label="Animated illustration of an artificial intelligence core connected to a network of nodes">
+  <defs>
+    <radialGradient id="orb" cx="40%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#67e8f9"/>
+      <stop offset="55%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </radialGradient>
+    <linearGradient id="stroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity=".45"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#334155"/>
+    </pattern>
+  </defs>
+
+  <rect width="520" height="480" rx="28" fill="#0a1120"/>
+  <rect width="520" height="480" rx="28" fill="url(#dots)" opacity=".7"/>
+  <circle cx="260" cy="230" r="210" fill="url(#glow)"/>
+
+  <!-- orbit rings -->
+  <g fill="none" stroke="rgba(148,163,184,.28)" stroke-width="1.4">
+    <ellipse cx="260" cy="230" rx="205" ry="88" transform="rotate(-18 260 230)"/>
+    <ellipse cx="260" cy="230" rx="175" ry="175"/>
+  </g>
+  <!-- satellites on orbits -->
+  <g>
+    <circle cx="465" cy="230" r="7" fill="#22d3ee">
+      <animateTransform attributeName="transform" type="rotate" from="0 260 230" to="360 260 230" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="260" cy="55" r="6" fill="#a78bfa">
+      <animateTransform attributeName="transform" type="rotate" from="360 260 230" to="0 260 230" dur="22s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="85" cy="230" r="5" fill="#f472b6">
+      <animateTransform attributeName="transform" type="rotate" from="0 260 230" to="360 260 230" dur="18s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- neural links -->
+  <g fill="none" stroke="url(#stroke)" stroke-width="1.8" opacity=".85" stroke-linecap="round">
+    <path d="M90,120 L160,160 L212,208"/>
+    <path d="M260,58 L360,160 L308,208"/>
+    <path d="M430,120 L360,160"/>
+    <path d="M470,240 L360,300 L308,252"/>
+    <path d="M410,380 L360,300"/>
+    <path d="M260,428 L360,300"/>
+    <path d="M110,380 L160,300 L212,252"/>
+    <path d="M55,240 L160,300"/>
+    <path d="M160,160 L360,160 M160,300 L360,300 M160,160 L160,300 M360,160 L360,300" opacity=".4"/>
+    <path d="M90,120 L260,58 M260,58 L430,120 M430,120 L470,240 M470,240 L410,380 M410,380 L260,428 M260,428 L110,380 M110,380 L55,240 M55,240 L90,120" opacity=".35"/>
+  </g>
+
+  <!-- signal pulses travelling the links -->
+  <g fill="#67e8f9">
+    <circle r="4.5">
+      <animateMotion dur="2.6s" repeatCount="indefinite" path="M90,120 L160,160 L212,208"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="4.5" fill="#a78bfa">
+      <animateMotion dur="3.2s" repeatCount="indefinite" path="M260,428 L360,300 L308,252"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="4" fill="#f472b6">
+      <animateMotion dur="2.9s" repeatCount="indefinite" path="M470,240 L360,300 L308,252"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="2.9s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- outer nodes -->
+  <g fill="#0b1226" stroke="url(#stroke)" stroke-width="2.5">
+    <circle cx="90" cy="120" r="13"/>
+    <circle cx="260" cy="58" r="13"/>
+    <circle cx="430" cy="120" r="13"/>
+    <circle cx="470" cy="240" r="13"/>
+    <circle cx="410" cy="380" r="13"/>
+    <circle cx="260" cy="428" r="13"/>
+    <circle cx="110" cy="380" r="13"/>
+    <circle cx="55" cy="240" r="13"/>
+  </g>
+  <!-- inner nodes -->
+  <g fill="#22d3ee" opacity=".9">
+    <circle cx="160" cy="160" r="7"/>
+    <circle cx="360" cy="160" r="7"/>
+    <circle cx="360" cy="300" r="7"/>
+    <circle cx="160" cy="300" r="7"/>
+  </g>
+
+  <!-- AI core -->
+  <circle cx="260" cy="230" r="74" fill="url(#orb)"/>
+  <circle cx="260" cy="230" r="74" fill="none" stroke="#67e8f9" stroke-width="2" opacity=".8">
+    <animate attributeName="r" values="74;82;74" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".8;.15;.8" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <g stroke="#e0f2fe" stroke-width="3" stroke-linecap="round" fill="none" opacity=".95">
+    <path d="M240 246 v-32 M280 246 v-32 M240 228 h40 M246 214 h28"/>
+  </g>
+  <g fill="#e0f2fe">
+    <circle cx="240" cy="212" r="5"/>
+    <circle cx="280" cy="212" r="5"/>
+    <circle cx="260" cy="232" r="6.5"/>
+    <circle cx="240" cy="248" r="5"/>
+    <circle cx="280" cy="248" r="5"/>
+  </g>
+</svg>

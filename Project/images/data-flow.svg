@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 260" role="img" aria-label="Animation of data flowing from sources through an AI model to predictions">
+  <defs>
+    <linearGradient id="ds" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="260" rx="20" fill="#0a1120"/>
+
+  <!-- boxes -->
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#e8eef8">
+    <rect x="26" y="86" width="120" height="86" rx="16" fill="#131f38" stroke="#22d3ee" stroke-width="2.5"/>
+    <text x="86" y="134">Data</text>
+    <rect x="220" y="66" width="120" height="126" rx="16" fill="#131f38" stroke="#818cf8" stroke-width="2.5"/>
+    <text x="280" y="120">AI Model</text>
+    <text x="280" y="142" font-size="11" fill="#a3b2c9" font-weight="400">train · learn</text>
+    <rect x="414" y="86" width="120" height="86" rx="16" fill="#131f38" stroke="#a78bfa" stroke-width="2.5"/>
+    <text x="474" y="134">Prediction</text>
+  </g>
+
+  <!-- pipes -->
+  <g fill="none" stroke="url(#ds)" stroke-width="3" stroke-linecap="round">
+    <path d="M146,129 H218"/>
+    <path d="M342,129 H412"/>
+  </g>
+
+  <!-- flowing particles -->
+  <g fill="#5eead4">
+    <circle r="5">
+      <animateMotion dur="1.8s" repeatCount="indefinite" path="M146,129 H218"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="5">
+      <animateMotion dur="1.8s" begin=".9s" repeatCount="indefinite" path="M146,129 H218"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="1.8s" begin=".9s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="5" fill="#c4b5fd">
+      <animateMotion dur="1.8s" begin=".3s" repeatCount="indefinite" path="M342,129 H412"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="1.8s" begin=".3s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="5" fill="#c4b5fd">
+      <animateMotion dur="1.8s" begin="1.2s" repeatCount="indefinite" path="M342,129 H412"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="1.8s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- model pulse -->
+  <circle cx="280" cy="160" r="8" fill="#818cf8">
+    <animate attributeName="r" values="8;12;8" dur="1.6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;.4;1" dur="1.6s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- binary rain -->
+  <g fill="#334155" font-family="monospace" font-size="12">
+    <text x="40" y="222">01001 11010 00110</text>
+    <text x="360" y="232">10110 01101 11001</text>
+  </g>
+</svg>

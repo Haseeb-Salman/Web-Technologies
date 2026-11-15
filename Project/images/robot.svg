@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 400" role="img" aria-label="Friendly animated robot mascot">
+  <defs>
+    <linearGradient id="rb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+
+  <!-- antenna -->
+  <line x1="180" y1="70" x2="180" y2="38" stroke="#94a3b8" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="180" cy="30" r="9" fill="#f472b6">
+    <animate attributeName="opacity" values="1;.25;1" dur="1.4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- head -->
+  <rect x="78" y="70" width="204" height="140" rx="36" fill="#131f38" stroke="url(#rb)" stroke-width="4"/>
+  <!-- ears -->
+  <rect x="58" y="108" width="20" height="52" rx="8" fill="#22d3ee"/>
+  <rect x="282" y="108" width="20" height="52" rx="8" fill="#a78bfa"/>
+  <!-- visor -->
+  <rect x="104" y="98" width="152" height="84" rx="26" fill="#050b16"/>
+  <!-- eyes (blinking) -->
+  <g fill="#5eead4">
+    <circle cx="148" cy="140" r="14">
+      <animate attributeName="ry" values="14;14;2;14;14" dur="3.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="212" cy="140" r="14">
+      <animate attributeName="ry" values="14;14;2;14;14" dur="3.4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <!-- smile -->
+  <path d="M152 166 q28 18 56 0" fill="none" stroke="#5eead4" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- body -->
+  <rect x="102" y="222" width="156" height="120" rx="28" fill="#131f38" stroke="url(#rb)" stroke-width="4"/>
+  <!-- chest core -->
+  <circle cx="180" cy="272" r="26" fill="#0a1120" stroke="#38bdf8" stroke-width="3"/>
+  <circle cx="180" cy="272" r="12" fill="#22d3ee">
+    <animate attributeName="r" values="12;16;12" dur="2.2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;.5;1" dur="2.2s" repeatCount="indefinite"/>
+  </circle>
+  <!-- panel lines -->
+  <g stroke="#334155" stroke-width="4" stroke-linecap="round">
+    <line x1="132" y1="318" x2="228" y2="318"/>
+  </g>
+
+  <!-- arms -->
+  <rect x="64" y="232" width="26" height="76" rx="12" fill="#22d3ee">
+    <animateTransform attributeName="transform" type="rotate" values="0 77 238; -14 77 238; 0 77 238" dur="2.8s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="270" y="232" width="26" height="76" rx="12" fill="#a78bfa">
+    <animateTransform attributeName="transform" type="rotate" values="0 283 238; 14 283 238; 0 283 238" dur="2.8s" begin=".4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- legs -->
+  <rect x="126" y="348" width="36" height="34" rx="10" fill="#334155"/>
+  <rect x="198" y="348" width="36" height="34" rx="10" fill="#334155"/>
+</svg>
