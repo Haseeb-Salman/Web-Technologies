@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Northstar College Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="csrf-token" content="">
+  <style>
+    .login-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      background: var(--bg-body);
+      position: relative;
+      overflow-y: auto;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .login-bg-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    .login-panel {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 420px;
+      padding: 20px;
+      animation: fadeInUp 0.8s ease both;
+    }
+
+    .login-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 32px;
+      box-shadow: var(--shadow), 0 0 0 1px rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(16px);
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .login-header h2 {
+      color: var(--secondary);
+      font-size: 28px;
+      margin: 0 0 8px;
+      text-shadow: 0 0 10px var(--secondary);
+      letter-spacing: 2px;
+    }
+
+    .login-header p {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      color: var(--text-body);
+      font-size: 13px;
+      margin-bottom: 8px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .input-wrapper input {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px 12px 42px;
+      color: var(--text-body);
+      font-size: 14px;
+      outline: none;
+      transition: var(--transition);
+      box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .input-wrapper input:focus {
+      border-color: var(--secondary);
+      box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3), 0 0 12px rgba(34, 211, 238, 0.25);
+    }
+
+    .input-wrapper i {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--secondary);
+      font-size: 16px;
+      pointer-events: none;
+    }
+
+    .input-wrapper input:focus+i {
+      color: var(--primary);
+    }
+
+    .form-section {
+      display: none;
+      animation: fadeIn 0.4s ease both;
+    }
+
+    .form-section.active {
+      display: block;
+    }
+
+    .strength-bar {
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      margin-top: 6px;
+      overflow: hidden;
+    }
+
+    .strength-bar div {
+      height: 100%;
+      width: 0%;
+      transition: var(--transition);
+    }
+
+    .strength-bar.weak div {
+      background: var(--danger);
+      box-shadow: 0 0 6px var(--danger);
+    }
+
+    .strength-bar.medium div {
+      background: var(--warning);
+      box-shadow: 0 0 6px var(--warning);
+    }
+
+    .strength-bar.strong div {
+      background: var(--success);
+      box-shadow: 0 0 6px var(--success);
+    }
+
+    .req-list {
+      font-size: 11px;
+      margin-top: 6px;
+    }
+
+    .req-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+      margin: 2px 0;
+    }
+
+    .req-item.met {
+      color: var(--success);
+    }
+
+    .req-item.unmet {
+      color: var(--text-muted);
+    }
+
+    .req-icon {
+      font-size: 10px;
+      width: 14px;
+      text-align: center;
+    }
+
+    .switch-link {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .switch-link a {
+      color: var(--secondary);
+      text-decoration: none;
+      cursor: pointer;
+      text-shadow: 0 0 6px var(--secondary);
+    }
+
+    .switch-link a:hover {
+      color: var(--primary);
+      text-shadow: 0 0 8px var(--primary);
+    }
+  </style>
+</head>
+
+<body class="login-page">
+  <canvas class="login-bg-canvas" id="particleCanvas"></canvas>
+  <div class="login-panel container px-3">
+    <div class="login-card card">
+      <div class="login-header">
+        <h2>NORTHSTAR<br>SIGN IN</h2>
+        <p>Access the College Management System</p>
+      </div>
+      <div id="loginAlert" class="alert alert-error" style="display:none;"></div>
+      <form id="loginForm">
+        <div class="form-group"><label for="username">Username</label>
+          <div class="input-wrapper"><i>&#128100;</i><input class="form-control" type="text" id="username" placeholder="e.g. admin"
+              autocomplete="username" required></div>
+        </div>
+        <div class="form-group"><label for="password">Password</label>
+          <div class="input-wrapper"><i>&#128274;</i><input class="form-control" type="password" id="password"
+              placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" autocomplete="current-password" required></div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-login" id="loginBtn">Sign In</button>
+      </form>
+      <div class="divider"><span>Don't have an account?</span></div>
+      <div class="switch-link"><a href="#" id="showRegisterLink">Create New Account &rarr;</a></div>
+      <!-- REGISTER SECTION -->
+      <div class="form-section" id="registerSection">
+        <div class="login-header">
+          <h2>CREATE ACCOUNT</h2>
+          <p>Register before you can login</p>
+        </div>
+        <div id="registerAlert" class="alert alert-error" style="display:none;"></div>
+        <form id="registerForm">
+          <div class="form-group"><label for="regUsername">Username</label>
+            <div class="input-wrapper"><i>&#128100;</i><input class="form-control" type="text" id="regUsername" placeholder="3-30 chars"
+                autocomplete="username" required maxlength="30"></div>
+          </div>
+          <div class="form-group"><label for="regEmail">Email</label>
+            <div class="input-wrapper"><i>&#9993;</i><input class="form-control" type="email" id="regEmail" placeholder="email@college.edu"
+                required></div>
+          </div>
+          <div class="form-group"><label for="regRole">Role</label><select class="form-select" id="regRole">
+              <option value="student">Student</option>
+              <option value="teacher">Teacher</option>
+            </select></div>
+          <div class="form-group"><label for="regPassword">Password</label>
+            <div class="input-wrapper"><i>&#128274;</i><input class="form-control" type="password" id="regPassword"
+                placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" autocomplete="new-password" required></div>
+            <div class="strength-bar">
+              <div id="passwordStrength"></div>
+            </div>
+            <div class="req-list" id="passwordRequirements" style="display:none;">
+              <div class="req-item"><span class="req-icon unmet" id="reqLen">&#10007;</span><span>8+ characters</span>
+              </div>
+              <div class="req-item"><span class="req-icon unmet" id="reqUpper">&#10007;</span><span>Uppercase
+                  letter</span></div>
+              <div class="req-item"><span class="req-icon unmet" id="reqLower">&#10007;</span><span>Lowercase
+                  letter</span></div>
+              <div class="req-item"><span class="req-icon unmet" id="reqDigit">&#10007;</span><span>Number</span></div>
+              <div class="req-item"><span class="req-icon unmet" id="reqSpecial">&#10007;</span><span>Special
+                  character</span></div>
+            </div>
+          </div>
+          <div class="form-group"><label for="regConfirmPassword">Confirm Password</label>
+            <div class="input-wrapper"><i>&#128274;</i><input class="form-control" type="password" id="regConfirmPassword"
+                placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" autocomplete="new-password" required></div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-login" id="registerBtn">Create Account</button>
+        </form>
+        <div class="switch-link"><a href="#" id="showLoginLink">&larr; Back to Login</a></div>
+      </div>
+      </div>
+      <div class="login-footer"><a href="index.html">&#9664; Back to Home</a></div>
+    </div>
+  </div>
+  <style>
+    .btn-login {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      outline: none;
+      transition: var(--transition);
+      box-shadow: 0 0 15px var(--secondary);
+      text-transform: uppercase;
+    }
+
+    .btn-login:hover {
+      box-shadow: 0 0 25px var(--secondary), 0 0 40px var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .btn-login:active {
+      transform: translateY(0);
+    }
+
+    .btn-login:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .login-footer {
+      text-align: center;
+      margin-top: 24px;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .login-footer a {
+      color: var(--secondary);
+      text-decoration: none;
+      margin: 0 6px;
+      transition: var(--transition);
+    }
+
+    .login-footer a:hover {
+      color: var(--primary);
+      text-shadow: 0 0 8px var(--primary);
+    }
+
+    .alert {
+      margin-bottom: 16px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      animation: shake 0.4s ease;
+    }
+
+    .alert-error {
+      background: rgba(248, 113, 113, 0.15);
+      border: 1px solid var(--danger);
+      color: var(--danger);
+      text-shadow: 0 0 6px var(--danger);
+    }
+
+    .alert-success {
+      background: rgba(52, 211, 153, 0.15);
+      border: 1px solid var(--success);
+      color: var(--success);
+      text-shadow: 0 0 6px var(--success);
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .divider span {
+      padding: 0 12px;
+    }
+
+    .btn-register {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border);
+      background: transparent;
+      border-radius: 10px;
+      color: var(--text-body);
+      font-size: 14px;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: 10px;
+    }
+
+    .btn-register:hover {
+      border-color: var(--secondary);
+      color: var(--secondary);
+      box-shadow: 0 0 10px var(--secondary);
+    }
+
+    .demo-credentials {
+      margin-top: 24px;
+      padding: 14px;
+      background: rgba(34, 211, 238, 0.05);
+      border: 1px dashed var(--secondary);
+      border-radius: 10px;
+      font-size: 12px;
+      color: var(--secondary);
+    }
+
+    .demo-credentials b {
+      color: var(--primary);
+    }
+
+    @keyframes shake {
+
+      0%,
+      100% {
+        transform: translateX(0)
+      }
+
+      25% {
+        transform: translateX(-10px)
+      }
+
+      75% {
+        transform: translateX(10px)
+      }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+
+</html>

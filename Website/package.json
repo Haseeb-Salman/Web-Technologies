@@ -1,0 +1,38 @@
+{
+  "name": "college-management-system",
+  "version": "1.0.0",
+  "description": "Full stack College Management System with Dark Neon Theme & Animations",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "express-session": "^1.17.3",
+    "bcryptjs": "^2.4.3",
+    "uuid": "^9.0.0"
+  },
+  "security": {
+    "passwordMinLength": 8,
+    "maxLoginAttempts": 5,
+    "lockoutDurationMinutes": 30,
+    "sessionTimeoutMinutes": 30,
+    "rateLimitWindowMinutes": 15,
+    "rateLimitMaxRequests": 100,
+    "features": [
+      "Rate limiting (IP-based)",
+      "CSRF token protection",
+      "Account lockout after failed attempts",
+      "Password strength validation",
+      "XSS input sanitization",
+      "Secure HTTP-only SameSite cookies",
+      "Security headers (CSP, X-Frame-Options, etc.)",
+      "Session fixation protection (regenerate on login)",
+      "Audit logging",
+      "Role-based access control",
+      "CORS origin restriction"
+    ]
+  }
+}

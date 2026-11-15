@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Northstar College's academic portal brings student, course, and faculty management together in one clear workspace.">
+  <meta name="theme-color" content="#f7f5ef">
+  <title>Northstar College | Academic Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="csrf-token" content="">
+</head>
+
+<body class="home-page">
+  <div class="home-ambient" aria-hidden="true">
+    <span class="ambient-orb ambient-orb-one"></span>
+    <span class="ambient-orb ambient-orb-two"></span>
+    <span class="ambient-grid"></span>
+  </div>
+
+  <nav class="home-nav" aria-label="Main navigation">
+    <a class="home-brand" href="#" aria-label="Northstar College home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" role="presentation">
+          <path d="M20 3.5 24.1 15.9 36.5 20l-12.4 4.1L20 36.5l-4.1-12.4L3.5 20l12.4-4.1L20 3.5Z" fill="currentColor" />
+          <circle cx="20" cy="20" r="3.2" fill="#0b1220" />
+        </svg>
+      </span>
+      <span class="brand-name">northstar<span>.</span></span>
+    </a>
+    <div class="home-nav-links">
+      <a href="#platform">Platform</a>
+      <a href="#modules">Modules</a>
+      <a href="#about">About</a>
+    </div>
+    <a href="login.html" class="home-nav-cta">Sign in <span aria-hidden="true">&rarr;</span></a>
+  </nav>
+
+  <main>
+    <div class="floating-campus-icons" aria-hidden="true">
+      <span class="floating-campus-icon floating-campus-icon-books">
+        <svg viewBox="0 0 64 64">
+          <path d="M11 18 27 12l5 32-16 6z" fill="#79b9a0" />
+          <path d="m17 19 10-4M19 26l10-3M20 33l10-3" fill="none" stroke="#e6f2dd" stroke-width="2" />
+          <path d="m33 15 18 2-4 33-18-2z" fill="#d6ad68" />
+          <path d="m37 22 10 1m-11 6 10 1m-11 6 10 1" fill="none" stroke="#fff0cf" stroke-width="2" />
+          <path d="m9 49 38 5" fill="none" stroke="#e4d3ae" stroke-linecap="round" stroke-width="3" />
+        </svg>
+      </span>
+      <span class="floating-campus-icon floating-campus-icon-globe">
+        <svg viewBox="0 0 64 64">
+          <circle cx="32" cy="27" r="21" fill="#459c92" />
+          <path d="M14 18c9 4 21 4 36 0M12 29c12-4 27-4 40 1M18 42c8-5 20-6 29-2M32 6c-7 8-10 15-9 23s4 14 10 19m0-42c7 8 10 15 9 23s-4 14-10 19" fill="none" stroke="#d8f0dc" stroke-opacity=".82" stroke-width="2" />
+          <path d="M23 49h18m-14 0 2 5h10l2-5M19 56h26" fill="none" stroke="#d7b879" stroke-linecap="round" stroke-width="3" />
+        </svg>
+      </span>
+      <span class="floating-campus-icon floating-campus-icon-people">
+        <svg viewBox="0 0 64 64">
+          <circle cx="25" cy="20" r="9" fill="#d9b879" />
+          <circle cx="45" cy="24" r="7" fill="#86c6ae" />
+          <path d="M8 51v-5c0-9 7-16 17-16s17 7 17 16v5z" fill="#4c91a0" />
+          <path d="M41 33c9-2 16 4 16 13v5H43v-5c0-5-2-9-5-12z" fill="#b5815c" />
+          <path d="M14 52h38" fill="none" stroke="#dce9dc" stroke-linecap="round" stroke-width="2" />
+        </svg>
+      </span>
+      <span class="floating-campus-icon floating-campus-icon-cap">
+        <svg viewBox="0 0 64 64">
+          <path d="m5 23 27-13 27 13-27 13z" fill="#d5b36e" />
+          <path d="M16 29v13c10 8 22 8 32 0V29L32 37z" fill="#aa8150" />
+          <path d="M58 23v18" fill="none" stroke="#f0d996" stroke-linecap="round" stroke-width="3" />
+          <circle cx="58" cy="43" r="3" fill="#f0d996" />
+          <path d="m14 23 18 9 18-9" fill="none" stroke="#f7e7bd" stroke-opacity=".8" stroke-width="2" />
+        </svg>
+      </span>
+      <span class="floating-campus-icon floating-campus-icon-calendar">
+        <svg viewBox="0 0 64 64">
+          <rect x="12" y="14" width="40" height="40" rx="7" fill="#e6e9dc" />
+          <path d="M12 23h40" stroke="#4b9286" stroke-width="8" />
+          <path d="M22 10v10m20-10v10" stroke="#d8b879" stroke-linecap="round" stroke-width="4" />
+          <path d="m21 34 3 3 5-6m5 5h8m-21 9 3 3 5-6m5 5h8" fill="none" stroke="#548e7d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" />
+        </svg>
+      </span>
+      <span class="floating-campus-icon floating-campus-icon-award">
+        <svg viewBox="0 0 64 64">
+          <path d="m32 6 7 5 9-1 3 8 7 6-3 8 2 9-8 4-5 8-9-2-9 2-5-8-8-4 2-9-3-8 7-6 3-8 9 1z" fill="#d3ad68" />
+          <path d="m23 42-3 17 12-6 12 6-3-17" fill="#4d9285" />
+          <path d="m32 16 3.4 7 7.7 1.1-5.6 5.4 1.3 7.7-6.8-3.6-6.8 3.6 1.3-7.7-5.6-5.4 7.7-1.1z" fill="#fff0c7" />
+        </svg>
+      </span>
+      <span class="floating-campus-icon floating-campus-icon-laptop">
+        <svg viewBox="0 0 64 64">
+          <rect x="12" y="11" width="40" height="31" rx="4" fill="#478a91" />
+          <rect x="17" y="16" width="30" height="21" rx="2" fill="#dbe9dc" />
+          <path d="m24 29 5-5 4 4 7-7m-9 18h8" fill="none" stroke="#579881" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" />
+          <path d="M7 46h50l-5 7H12z" fill="#d4b16f" />
+          <path d="M27 47h10" stroke="#fff0c7" stroke-linecap="round" stroke-width="2" />
+        </svg>
+      </span>
+      <span class="floating-campus-icon floating-campus-icon-pencil">
+        <svg viewBox="0 0 64 64">
+          <path d="m17 44 4-13L43 9l12 12-22 22-13 4z" fill="#d2a95f" />
+          <path d="m21 31 12 12M43 9l12 12" fill="none" stroke="#f7e7c1" stroke-width="3" />
+          <path d="m17 44 9-3-6-6z" fill="#e8ddc4" />
+          <path d="m16 49 2-5 4 4z" fill="#537d72" />
+          <path d="M14 55h38" stroke="#7eaf9e" stroke-linecap="round" stroke-width="3" />
+        </svg>
+      </span>
+    </div>
+    <section class="home-hero" id="platform">
+      <div class="hero-copy animate-on-scroll fade">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> THE ACADEMIC WORKSPACE</p>
+        <h1>Make campus<br>management <span>feel simple.</span></h1>
+        <p class="hero-lede">A calmer, clearer way to manage the people and programs that move your college forward.</p>
+        <div class="hero-buttons">
+          <a href="login.html" class="btn home-button home-button-primary">Enter the portal <span aria-hidden="true">&rarr;</span></a>
+          <a href="#modules" class="btn home-button home-button-secondary">Explore the platform</a>
+        </div>
+        <div class="hero-note">
+          <span class="note-icon" aria-hidden="true">
+            <svg viewBox="0 0 20 20"><path d="m5 10 3.1 3.1L15.5 6" /></svg>
+          </span>
+          One connected place for students, courses, and faculty
+        </div>
+      </div>
+
+      <div class="hero-art animate-on-scroll fade" aria-label="Illustrated preview of the Northstar academic dashboard">
+        <div class="art-halo" aria-hidden="true"></div>
+        <div class="graduation-model" aria-hidden="true">
+          <div class="graduation-cap">
+            <span class="cap-top"></span>
+            <span class="cap-crown"></span>
+            <span class="cap-tassel"></span>
+          </div>
+        </div>
+        <div class="book-model" aria-hidden="true">
+          <span class="book-pages"></span>
+          <span class="book-cover"></span>
+          <span class="book-spine"></span>
+        </div>
+        <div class="globe-model" aria-hidden="true">
+          <span class="globe-sphere"></span>
+          <span class="globe-stand"></span>
+        </div>
+        <div class="dashboard-preview">
+          <div class="preview-sidebar">
+            <span class="preview-brand-mark" aria-hidden="true">N</span>
+            <span class="sidebar-mark sidebar-mark-active" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="sidebar-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="sidebar-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="sidebar-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="preview-avatar" aria-hidden="true">A</span>
+          </div>
+          <div class="preview-main">
+            <div class="preview-topline">
+              <div>
+                <span class="preview-kicker">PORTAL PREVIEW</span>
+                <h2>Welcome to Northstar <span aria-hidden="true">✦</span></h2>
+              </div>
+              <span class="preview-date">Academic year <span aria-hidden="true">⌄</span></span>
+            </div>
+            <div class="preview-stats">
+              <div class="preview-stat">
+                <span>Student records</span>
+                <strong>Profiles</strong>
+                <small>People &amp; academic status</small>
+                <span class="stat-sparkline sparkline-one" aria-hidden="true"></span>
+              </div>
+              <div class="preview-stat">
+                <span>Course catalog</span>
+                <strong>Courses</strong>
+                <small>Credits &amp; enrollment</small>
+                <span class="stat-sparkline sparkline-two" aria-hidden="true"></span>
+              </div>
+            </div>
+            <div class="preview-campus">
+              <div class="campus-heading">
+                <div>
+                  <span class="preview-kicker">ACADEMIC WORKSPACE</span>
+                  <strong>A connected community</strong>
+                </div>
+                <span class="campus-status badge rounded-pill"><i></i> Sample view</span>
+              </div>
+              <div class="campus-scene-3d">
+                <svg class="campus-illustration" viewBox="0 0 500 185" role="img" aria-labelledby="campus-title campus-desc">
+                  <title id="campus-title">Illustrated campus scene</title>
+                  <desc id="campus-desc">A modern university building surrounded by trees under a soft sunrise.</desc>
+                  <defs>
+                    <linearGradient id="campusSky" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#192b42" />
+                      <stop offset="1" stop-color="#1c3851" />
+                    </linearGradient>
+                    <linearGradient id="campusSun" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#f9cf83" stop-opacity=".9" />
+                      <stop offset="1" stop-color="#f3a96d" stop-opacity=".12" />
+                    </linearGradient>
+                  </defs>
+                  <rect width="500" height="185" rx="15" fill="url(#campusSky)" />
+                  <circle class="campus-sun" cx="392" cy="52" r="28" fill="url(#campusSun)" />
+                  <path d="M0 131c67-18 114-18 183 0s119 18 175 0 88-19 142-4v58H0v-54Z" fill="#1b4252" opacity=".75" />
+                  <path d="M36 145h429" stroke="#72d5c5" stroke-opacity=".42" stroke-width="1" />
+                  <g class="campus-building">
+                    <path d="M146 81h211v68H146z" fill="#263e54" />
+                    <path d="m130 82 121-40 121 40H130Z" fill="#a4c8c0" />
+                    <path d="M155 89h194v8H155z" fill="#d1d7c4" opacity=".8" />
+                    <path d="M170 102h24v33h-24zm42 0h24v33h-24zm42 0h24v33h-24zm42 0h24v33h-24z" fill="#8ecdc4" opacity=".84" />
+                    <path d="M240 111h23v38h-23z" fill="#e1bd83" />
+                    <path d="M236 111h31v5h-31z" fill="#f2d8a3" />
+                    <path d="M145 149h213" stroke="#d1d7c4" stroke-width="3" />
+                  </g>
+                  <g class="campus-tree">
+                    <path d="M91 147v-28m0 0-11 11m11-19 12 13" stroke="#8baf91" stroke-width="4" stroke-linecap="round" />
+                    <circle cx="91" cy="103" r="18" fill="#4b8e7c" />
+                    <path d="M405 148v-29m0 0-11 12m11-20 12 13" stroke="#8baf91" stroke-width="4" stroke-linecap="round" />
+                    <circle cx="405" cy="103" r="19" fill="#4b8e7c" />
+                  </g>
+                  <g fill="#f3d897" opacity=".78">
+                    <circle cx="62" cy="42" r="1.5" /><circle cx="105" cy="62" r="1.2" />
+                    <circle cx="338" cy="34" r="1.3" /><circle cx="449" cy="78" r="1.5" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div class="preview-footer">
+              <span><i></i> Student, course &amp; faculty records</span>
+              <span>Illustrative interface</span>
+            </div>
+          </div>
+        </div>
+        <div class="floating-card floating-card-top">
+          <span class="floating-icon floating-icon-green" aria-hidden="true">✓</span>
+          <span><strong>Course roster</strong><small>Example module</small></span>
+        </div>
+        <div class="floating-card floating-card-bottom">
+          <span class="floating-icon floating-icon-blue" aria-hidden="true">↗</span>
+          <span><strong>One clear view</strong><small>People &amp; programs</small></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-modules" id="modules">
+      <div class="section-intro animate-on-scroll fade">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> BUILT AROUND YOUR CAMPUS</p>
+        <h2>The essentials, <span>working together.</span></h2>
+        <p>Find the information you need and take care of everyday academic work without the clutter.</p>
+      </div>
+      <div class="module-grid row row-cols-1 row-cols-md-3 g-3">
+          <article class="module-card card h-100 animate-on-scroll fade">
+          <span class="module-number">01</span>
+          <div class="module-icon module-icon-blue module-icon-3d" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" /><path d="M3.5 20v-1.6a5.5 5.5 0 0 1 11 0V20m2-10.8a3.2 3.2 0 0 1 0 6.1m1.2 2.4a4.6 4.6 0 0 1 2.8 4.3" /></svg>
+          </div>
+          <h3>Student records</h3>
+          <p>Keep student details, enrollment information, and academic status organized and easy to find.</p>
+          <a href="login.html" aria-label="Sign in to manage student records">Explore students <span aria-hidden="true">&rarr;</span></a>
+          </article>
+          <article class="module-card card h-100 animate-on-scroll fade">
+          <span class="module-number">02</span>
+          <div class="module-icon module-icon-amber module-icon-3d" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m3 9 9-5 9 5-9 5-9-5Z" /><path d="M7 11.2V16c2.8 2.4 7.2 2.4 10 0v-4.8M21 9v6" /></svg>
+          </div>
+          <h3>Courses &amp; enrollment</h3>
+          <p>Manage course details, credit hours, capacity, and enrollment in one dependable catalog.</p>
+          <a href="login.html" aria-label="Sign in to manage courses">Explore courses <span aria-hidden="true">&rarr;</span></a>
+          </article>
+          <article class="module-card card h-100 animate-on-scroll fade">
+          <span class="module-number">03</span>
+          <div class="module-icon module-icon-violet module-icon-3d" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 20v-1.4a5.6 5.6 0 0 1 11.2 0V20M9.6 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm7.2-6.4a3.5 3.5 0 0 1 0 6.8m1.4 2.2a5.6 5.6 0 0 1 2.3 4.5V20" /></svg>
+          </div>
+          <h3>Faculty directory</h3>
+          <p>Keep faculty profiles, departments, subjects, and teaching experience close at hand.</p>
+          <a href="login.html" aria-label="Sign in to manage faculty records">Explore faculty <span aria-hidden="true">&rarr;</span></a>
+          </article>
+      </div>
+    </section>
+
+    <section class="home-about" id="about">
+      <div class="about-orbit" aria-hidden="true"><span></span><span></span><span></span><span class="about-planet"></span></div>
+      <div class="about-copy animate-on-scroll fade">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> LESS ADMIN. MORE MOMENTUM.</p>
+        <h2>A better day starts with a <span>clearer picture.</span></h2>
+        <p>Northstar brings everyday college records into one purposeful workspace—so your team can spend less time searching and more time supporting the campus community.</p>
+        <a href="login.html" class="btn home-button home-button-primary">Get started <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div class="about-points animate-on-scroll fade">
+        <div><span class="point-check" aria-hidden="true">✓</span><span><strong>Know what needs attention</strong><small>See key campus information at a glance.</small></span></div>
+        <div><span class="point-check" aria-hidden="true">✓</span><span><strong>Keep records together</strong><small>Move between people, courses, and faculty with ease.</small></span></div>
+        <div><span class="point-check" aria-hidden="true">✓</span><span><strong>Make routine work simpler</strong><small>Spend less time navigating and more time getting things done.</small></span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="home-footer">
+    <div class="home-footer-cta d-flex align-items-center justify-content-between animate-on-scroll fade">
+      <div>
+        <p class="home-footer-eyebrow">READY FOR WHAT'S NEXT?</p>
+        <h2>A clearer campus starts here.</h2>
+      </div>
+      <a href="login.html" class="btn btn-lg rounded-circle d-inline-flex align-items-center justify-content-center home-footer-cta-link" aria-label="Get started with Northstar">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M5 12h14m-6-6 6 6-6 6" />
+        </svg>
+      </a>
+    </div>
+    <div class="home-footer-main row g-4">
+      <div class="home-footer-brand col-12 col-md-6 col-lg-3">
+        <a class="home-brand d-inline-flex align-items-center gap-2 text-decoration-none" href="#" aria-label="Northstar College home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" role="presentation">
+              <path d="M20 3.5 24.1 15.9 36.5 20l-12.4 4.1L20 36.5l-4.1-12.4L3.5 20l12.4-4.1L20 3.5Z" fill="currentColor" />
+              <circle cx="20" cy="20" r="3.2" fill="#0b1220" />
+            </svg>
+          </span>
+          <span class="brand-name">northstar<span>.</span></span>
+        </a>
+        <p>Thoughtful tools for a thriving campus.</p>
+      </div>
+      <nav class="home-footer-column col-12 col-md-6 col-lg-2" aria-label="Footer navigation">
+        <h3>EXPLORE</h3>
+        <a href="#platform">Platform</a>
+        <a href="#modules">Modules</a>
+        <a href="#about">About Northstar</a>
+      </nav>
+      <div class="home-footer-column col-12 col-md-6 col-lg-3">
+        <h3>ACADEMIC WORKSPACE</h3>
+        <p>Keep student, course, and faculty information connected in one place.</p>
+      </div>
+      <div class="home-footer-column home-footer-access col-12 col-md-6 col-lg-4">
+        <h3>PORTAL ACCESS</h3>
+        <p>Continue to your Northstar workspace.</p>
+        <a class="footer-signin" href="login.html">Portal sign in <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <small class="col-12 text-center">&copy; 2026 Northstar College. All rights reserved.</small>
+    </div>
+  </footer>
+  <button class="btn btn-sm rounded-pill home-theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+    <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+    <span class="theme-toggle-label">Dark mode</span>
+  </button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/common.js"></script>
+</body>
+
+</html>
