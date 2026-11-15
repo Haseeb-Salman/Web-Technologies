@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClassPick | BS-IT</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">CP</span><span>Class<span class="accent">Pick</span><small>BS-IT
+          RANDOM PICKER</small></span></a>
+    <div class="top-actions"><span id="welcomeUser">Admin Panel</span><button class="btn btn-ghost"
+        id="logoutButton">Logout</button></div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">SEMESTER MANAGEMENT</p>
+        <h1>Choose your <span class="accent">class.</span></h1>
+        <p class="muted">Select a semester to manage students and start the random picker.</p>
+      </div>
+      <div class="hero-chip"><span class="pulse"></span> Supabase Connected</div>
+    </section>
+
+    <section class="semester-grid" id="semesterGrid" aria-label="Choose semester">
+      <button class="semester-card" data-semester="BS-IT 1st Semester"><span
+          class="semester-icon">01</span><span><strong>1st Semester</strong><small>BS-IT</small></span><span
+          class="card-arrow">↗</span></button>
+      <button class="semester-card" data-semester="BS-IT 2nd Semester"><span
+          class="semester-icon">02</span><span><strong>2nd Semester</strong><small>BS-IT</small></span><span
+          class="card-arrow">↗</span></button>
+      <button class="semester-card" data-semester="BS-IT 3rd Semester"><span
+          class="semester-icon">03</span><span><strong>3rd Semester</strong><small>BS-IT</small></span><span
+          class="card-arrow">↗</span></button>
+      <button class="semester-card" data-semester="BS-IT 4th Semester"><span
+          class="semester-icon">04</span><span><strong>4th Semester</strong><small>BS-IT</small></span><span
+          class="card-arrow">↗</span></button>
+      <button class="semester-card semester-existing" data-semester="BS-IT 5th Semester"><span
+          class="semester-icon">05</span><span><strong>5th Semester</strong><small>Existing students</small></span><span
+          class="card-arrow">↗</span></button>
+
+      <button class="semester-card" data-semester="BS-IT 6th Semester">
+        <span class="semester-icon">06</span>
+        <span>
+          <strong>6th Semester</strong>
+          <small>BS-IT</small>
+        </span>
+        <span class="card-arrow">↗</span>
+      </button>
+
+      <button class="semester-card" data-semester="BS-IT 7th Semester">
+        <span class="semester-icon">07</span>
+        <span>
+          <strong>7th Semester</strong>
+          <small>BS-IT</small>
+        </span>
+        <span class="card-arrow">↗</span>
+      </button>
+
+      <button class="semester-card" data-semester="BS-IT 8th Semester">
+        <span class="semester-icon">08</span>
+        <span>
+          <strong>8th Semester</strong>
+          <small>BS-IT</small>
+        </span>
+        <span class="card-arrow">↗</span>
+      </button>
+
+    </section>
+
+    <section class="workspace hidden" id="workspace">
+      <div class="section-heading">
+        <div><button class="back-link" id="backButton">← All semesters</button>
+          <p class="eyebrow">CURRENT CLASS</p>
+          <h2 id="classTitle">BS-IT 5th Semester</h2>
+        </div>
+        <div class="count-pill"><strong id="studentCount">0</strong><span>students</span></div>
+      </div>
+      <div class="workspace-grid">
+        <div class="panel manage-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">STUDENT RECORDS</p>
+              <h3>Manage students</h3>
+            </div><span class="panel-icon">＋</span>
+          </div>
+          <form id="studentForm" class="student-form">
+            <label for="nameInput">Student name</label><input id="nameInput" maxlength="100"
+              placeholder="Enter full name" required />
+            <label for="rollInput">Roll number</label><input id="rollInput" maxlength="30" placeholder="e.g. 241901"
+              required />
+            <button class="btn btn-primary full" id="addButton" type="submit">＋ Add student</button>
+          </form>
+          <div id="statusMessage" class="status" role="status"></div>
+          <div class="list-heading">
+            <h3>Class students</h3><span id="listCount">0 records</span>
+          </div>
+          <input id="searchInput" class="search" placeholder="⌕ Search name or roll number..." />
+          <div id="studentList" class="student-list">
+            <div class="empty-state">Loading students...</div>
+          </div>
+          <button class="btn btn-danger-outline full" id="clearButton" type="button">Clear this semester's
+            students</button>
+        </div>
+
+        <div class="panel picker-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">RANDOM SELECTION</p>
+              <h3>Pick a student</h3>
+            </div><span class="live-tag"><span class="pulse"></span> LIVE</span>
+          </div>
+          <div class="picker-orbit">
+            <div class="orbit orbit-a"></div>
+            <div class="orbit orbit-b"></div>
+            <div class="picker-core"><span class="result-label">SELECTED ROLL NUMBER</span>
+              <div id="result" class="result-number">READY</div>
+              <div id="studentName" class="student-name">Choose a student</div>
+              <div id="studentRoll" class="student-roll">Your result will appear here</div>
+            </div>
+          </div>
+          <button class="btn btn-primary pick-button" id="pickButton" type="button">✦ Pick Random Student</button>
+          <div class="picker-actions"><button class="btn btn-ghost" id="resetButton" type="button">↻ Reset
+              round</button></div>
+          <p id="roundInfo" class="round-info">0 of 0 students selected this round</p>
+          <div class="tip-box">✦ Each student is picked only once per round. Reset the round to start again.</div>
+        </div>
+      </div>
+    </section>
+    <footer>CLASSPICK <span>•</span> MADE FOR BS-IT</footer>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>

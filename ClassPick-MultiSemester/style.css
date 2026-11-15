@@ -1,0 +1,821 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg: #080d19;
+    --panel: #101a2b;
+    --panel2: #0c1525;
+    --line: rgba(148, 163, 184, .16);
+    --text: #eef5ff;
+    --muted: #91a0b8;
+    --green: #38f2ad;
+    --cyan: #42d9ff;
+    --red: #ff6682;
+    --shadow: 0 22px 70px rgba(0, 0, 0, .28)
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(ellipse at 50% -20%, #172c47 0, transparent 48%), var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden
+}
+
+.ambient {
+    position: fixed;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    filter: blur(110px);
+    opacity: .12;
+    pointer-events: none;
+    z-index: -1
+}
+
+.ambient-one {
+    background: #13e6a0;
+    top: 18%;
+    left: -240px
+}
+
+.ambient-two {
+    background: #238cff;
+    right: -250px;
+    bottom: 0
+}
+
+.topbar {
+    height: 82px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 max(5vw, 22px);
+    background: rgba(7, 13, 25, .7);
+    backdrop-filter: blur(18px)
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text);
+    text-decoration: none;
+    font: 700 20px 'Space Grotesk', sans-serif;
+    letter-spacing: -.7px
+}
+
+.brand small {
+    display: block;
+    font: 600 9px 'DM Sans', sans-serif;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-top: 2px
+}
+
+.brand-mark {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: linear-gradient(135deg, var(--green), var(--cyan));
+    color: #06131b;
+    font: 800 15px 'Space Grotesk';
+    box-shadow: 0 0 25px #38f2ad35
+}
+
+.accent {
+    color: var(--green)
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: var(--muted);
+    font-size: 13px
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 52px 24px 20px
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 32px
+}
+
+.eyebrow {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.2px;
+    color: var(--green);
+    margin: 0 0 10px
+}
+
+.hero h1,
+.login-card h1 {
+    font: 700 clamp(32px, 5vw, 48px) 'Space Grotesk';
+    letter-spacing: -1.8px;
+    margin: 0 0 8px
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0
+}
+
+.hero-chip,
+.live-tag,
+.count-pill {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 10px 15px;
+    color: #c3d0e2;
+    font-size: 12px;
+    white-space: nowrap;
+    background: #101a2b99
+}
+
+.pulse {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 12px var(--green);
+    margin-right: 8px
+}
+
+.semester-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.semester-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+    padding: 23px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: linear-gradient(145deg, #142238, #0d1728);
+    color: var(--text);
+    cursor: pointer;
+    transition: .25s;
+    box-shadow: 0 10px 30px #0002
+}
+
+.semester-card:hover {
+    transform: translateY(-5px);
+    border-color: #38f2ad88;
+    box-shadow: 0 15px 40px #38f2ad12
+}
+
+.semester-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    background: #38f2ad13;
+    border: 1px solid #38f2ad35;
+    color: var(--green);
+    font: 700 20px 'Space Grotesk'
+}
+
+.semester-card strong {
+    display: block;
+    font: 600 17px 'Space Grotesk'
+}
+
+.semester-card small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 5px
+}
+
+.card-arrow {
+    margin-left: auto;
+    color: var(--green);
+    font-size: 20px
+}
+
+.semester-existing {
+    border-color: #38f2ad55
+}
+
+.hidden {
+    display: none !important
+}
+
+.workspace {
+    margin-top: 28px
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 20px
+}
+
+.section-heading h2 {
+    font: 700 30px 'Space Grotesk';
+    margin: 0;
+    letter-spacing: -1px
+}
+
+.back-link {
+    border: 0;
+    background: none;
+    color: var(--muted);
+    padding: 0;
+    margin: 0 0 20px;
+    cursor: pointer;
+    font: 500 12px 'DM Sans'
+}
+
+.back-link:hover {
+    color: var(--green)
+}
+
+.count-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px
+}
+
+.count-pill strong {
+    font-size: 18px;
+    color: var(--green)
+}
+
+.count-pill span {
+    font-size: 11px
+}
+
+.workspace-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 18px;
+    align-items: start
+}
+
+.panel {
+    background: linear-gradient(150deg, #121e31, #0c1524);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 24px;
+    box-shadow: var(--shadow)
+}
+
+.panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px
+}
+
+.panel-heading h3,
+.list-heading h3 {
+    font: 600 19px 'Space Grotesk';
+    margin: 0
+}
+
+.panel-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 11px;
+    display: grid;
+    place-items: center;
+    color: var(--green);
+    background: #38f2ad15;
+    font-size: 21px
+}
+
+.student-form label,
+.login-card label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #b7c5d8;
+    margin: 14px 0 7px
+}
+
+.student-form input,
+.login-card input,
+.search {
+    width: 100%;
+    background: #091322;
+    border: 1px solid #25354b;
+    border-radius: 10px;
+    padding: 13px 14px;
+    color: var(--text);
+    outline: none;
+    font: 13px 'DM Sans';
+    transition: .2s
+}
+
+.student-form input:focus,
+.login-card input:focus,
+.search:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px #38f2ad12
+}
+
+.btn {
+    border: 0;
+    border-radius: 10px;
+    padding: 12px 17px;
+    font: 700 12px 'DM Sans';
+    cursor: pointer;
+    transition: .2s
+}
+
+.btn:disabled {
+    opacity: .45;
+    cursor: not-allowed
+}
+
+.btn-primary {
+    background: linear-gradient(100deg, var(--green), #51dfff);
+    color: #07151c;
+    box-shadow: 0 8px 25px #38f2ad20
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    filter: brightness(1.08)
+}
+
+.btn-ghost {
+    background: #172438;
+    color: #d7e4f5;
+    border: 1px solid var(--line)
+}
+
+.btn-danger-outline {
+    background: transparent;
+    color: #ff8296;
+    border: 1px solid #ff668244
+}
+
+.full {
+    width: 100%;
+    margin-top: 14px
+}
+
+.status {
+    min-height: 18px;
+    font-size: 11px;
+    color: var(--green);
+    margin: 10px 0
+}
+
+.status.error {
+    color: var(--red)
+}
+
+.list-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 0 12px
+}
+
+.list-heading h3 {
+    font-size: 15px
+}
+
+.list-heading span {
+    font-size: 10px;
+    color: var(--muted)
+}
+
+.search {
+    padding: 11px 13px;
+    margin-bottom: 10px
+}
+
+.student-list {
+    max-height: 330px;
+    overflow: auto
+}
+
+.student-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 12px;
+    border-bottom: 1px solid #ffffff0d;
+    gap: 12px
+}
+
+.student-details {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0
+}
+
+.student-item-roll {
+    font: 700 11px 'Space Grotesk';
+    color: var(--green);
+    background: #38f2ad12;
+    padding: 6px 8px;
+    border-radius: 7px;
+    white-space: nowrap
+}
+
+.student-item strong {
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.remove-button {
+    border: 0;
+    background: #ff668214;
+    color: #ff8197;
+    border-radius: 7px;
+    width: 27px;
+    height: 27px;
+    font-size: 19px;
+    cursor: pointer;
+    flex: none
+}
+
+.empty-state {
+    text-align: center;
+    padding: 26px 10px;
+    color: var(--muted);
+    font-size: 12px
+}
+
+.picker-panel {
+    text-align: center;
+    position: relative;
+    overflow: hidden
+}
+
+.picker-panel .panel-heading {
+    text-align: left
+}
+
+.live-tag {
+    font-size: 9px;
+    padding: 8px 11px;
+    color: var(--green)
+}
+
+.picker-orbit {
+    width: min(330px, 78vw);
+    aspect-ratio: 1;
+    margin: 8px auto 20px;
+    position: relative;
+    display: grid;
+    place-items: center
+}
+
+.orbit {
+    position: absolute;
+    border: 1px solid #38f2ad24;
+    border-radius: 50%;
+    inset: 4px;
+    animation: spin 18s linear infinite
+}
+
+.orbit-a:before,
+.orbit-b:after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--green);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--green);
+    top: 18%;
+    left: 12%
+}
+
+.orbit-b {
+    inset: 22px;
+    border-style: dashed;
+    border-color: #42d9ff28;
+    animation-direction: reverse;
+    animation-duration: 25s
+}
+
+.orbit-b:after {
+    background: var(--cyan);
+    top: auto;
+    left: auto;
+    bottom: 14%;
+    right: 8%;
+    box-shadow: 0 0 15px var(--cyan)
+}
+
+.picker-core {
+    width: 76%;
+    height: 76%;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: radial-gradient(circle at 40% 30%, #1b3b4a, #0a1728 70%);
+    border: 1px solid #38f2ad55;
+    box-shadow: 0 0 45px #38f2ad12, inset 0 0 35px #38f2ad0c
+}
+
+.result-label {
+    font-size: 8px;
+    letter-spacing: 1.7px;
+    color: var(--muted);
+    font-weight: 800
+}
+
+.result-number {
+    font: 700 clamp(27px, 5vw, 43px) 'Space Grotesk';
+    color: var(--green);
+    margin: 9px 0;
+    text-shadow: 0 0 22px #38f2ad55;
+    overflow-wrap: anywhere
+}
+
+.student-name {
+    font: 600 14px 'Space Grotesk';
+    max-width: 100%;
+    overflow-wrap: anywhere
+}
+
+.student-roll {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 5px
+}
+
+.pick-button {
+    width: min(290px, 100%);
+    padding: 16px;
+    font-size: 13px
+}
+
+.picker-actions {
+    margin-top: 10px
+}
+
+.round-info {
+    font-size: 10px;
+    color: var(--muted);
+    margin: 14px 0
+}
+
+.tip-box {
+    background: #38f2ad0a;
+    border: 1px solid #38f2ad1c;
+    border-radius: 10px;
+    padding: 11px;
+    color: #9fb5c4;
+    font-size: 10px;
+    line-height: 1.5
+}
+
+.selection-animation {
+    animation: reveal .55s ease
+}
+
+.confetti {
+    position: fixed;
+    top: -25px;
+    z-index: 99;
+    color: var(--green);
+    font-size: 17px;
+    pointer-events: none;
+    animation: fall 2.5s linear forwards
+}
+
+.gender-popup {
+    position: fixed;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    max-width: calc(100% - 28px);
+    padding: 15px 22px;
+    border: 1px solid #38f2ad88;
+    border-radius: 14px;
+    background: #071b1b;
+    color: var(--green);
+    font: 700 15px 'Space Grotesk';
+    text-align: center;
+    box-shadow: 0 0 35px #38f2ad35;
+    animation: pop .35s ease
+}
+
+.login-body {
+    display: grid;
+    place-items: center;
+    padding: 20px
+}
+
+.login-card {
+    width: min(420px, 100%);
+    padding: 35px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: linear-gradient(145deg, #142238, #0b1423);
+    box-shadow: var(--shadow)
+}
+
+.login-brand {
+    margin-bottom: 38px
+}
+
+.login-card h1 {
+    font-size: 34px
+}
+
+.login-card .muted {
+    margin-bottom: 18px
+}
+
+.login-card form {
+    margin-top: 22px
+}
+
+footer {
+    text-align: center;
+    color: #52627a;
+    font-size: 9px;
+    letter-spacing: 2px;
+    padding: 35px 0 15px
+}
+
+footer span {
+    color: var(--green);
+    padding: 0 6px
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes reveal {
+    0% {
+        transform: scale(.85);
+        opacity: .3
+    }
+
+    70% {
+        transform: scale(1.06)
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(600deg);
+        opacity: 0
+    }
+}
+
+@keyframes pop {
+    from {
+        opacity: 0;
+        top: 0
+    }
+
+    to {
+        opacity: 1;
+        top: 22px
+    }
+}
+
+@media(max-width:850px) {
+    .workspace-grid {
+        grid-template-columns: 1fr
+    }
+
+    .semester-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .container {
+        padding-top: 35px
+    }
+}
+
+@media(max-width:520px) {
+    .topbar {
+        height: 70px;
+        padding: 0 16px
+    }
+
+    .top-actions {
+        gap: 8px;
+        font-size: 10px
+    }
+
+    .top-actions .btn {
+        padding: 9px 11px
+    }
+
+    .brand {
+        font-size: 18px
+    }
+
+    .brand-mark {
+        width: 37px;
+        height: 37px
+    }
+
+    .container {
+        padding: 30px 14px 15px
+    }
+
+    .hero {
+        align-items: flex-start;
+        flex-direction: column
+    }
+
+    .hero-chip {
+        font-size: 10px
+    }
+
+    .semester-grid {
+        grid-template-columns: 1fr;
+        gap: 10px
+    }
+
+    .semester-card {
+        padding: 16px
+    }
+
+    .semester-icon {
+        width: 45px;
+        height: 45px
+    }
+
+    .panel {
+        padding: 17px;
+        border-radius: 17px
+    }
+
+    .section-heading h2 {
+        font-size: 24px
+    }
+
+    .count-pill {
+        padding: 8px 10px
+    }
+
+    .picker-orbit {
+        width: min(290px, 82vw)
+    }
+
+    .gender-popup {
+        font-size: 13px;
+        padding: 13px 15px
+    }
+
+    .login-card {
+        padding: 25px
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition: none !important
+    }
+}
