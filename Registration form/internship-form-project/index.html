@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101629">
+  <title>Internship Registration | 2026 Cohort</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="wrapper"><div class="form-card">
+<div class="form-header">
+  <span class="badge">&#128640; 2026 Internship Cohort</span>
+  <h1>Internship <span>Registration</span> Form</h1>
+  <p>Join our team! Fill the form carefully. Fields marked <span class="req">*</span> are compulsory. Your data stays secure &amp; private.</p>
+</div>
+<form class="form-body" id="internshipForm" autocomplete="on">
+<div class="section">
+  <div class="section-head"><span class="section-num">1</span><h2>Personal Information</h2></div>
+  <div class="grid-2">
+    <div class="field">
+      <label for="fullName">Full Name <span class="req">*</span></label>
+      <input type="text" id="fullName" name="fullName" placeholder="e.g. fullname" required>
+    </div>
+    <div class="field">
+      <label for="fatherName">Father / Guardian Name</label>
+      <input type="text" id="fatherName" name="fatherName" placeholder="e.g. fathername">
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="field">
+      <label for="cnic">CNIC / B-Form No <span class="req">*</span></label>
+      <input type="text" id="cnic" name="cnic" pattern="[0-9]{5}-[0-9]{7}-[0-9]" placeholder="35202-1234567-1" required title="Format: 35202-1234567-1">
+      <span class="hint">Format: XXXXX-XXXXXXX-X</span>
+    </div>
+    <div class="field">
+      <label for="dob">Date of Birth <span class="req">*</span></label>
+      <input type="date" id="dob" name="dob" max="2008-12-31" required>
+      <span class="hint">Open the built-in calendar &uarr;</span>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="field">
+      <label>Gender <span class="req">*</span></label>
+      <div class="option-group">
+        <label class="option"><input type="radio" name="gender" value="Male" required> Male</label>
+        <label class="option"><input type="radio" name="gender" value="Female"> Female</label>
+        <label class="option"><input type="radio" name="gender" value="Other"> Other</label>
+      </div>
+    </div>
+    <div class="field">
+      <label for="marital">Marital Status</label>
+      <select id="marital" name="marital">
+        <option value="">-- Select --</option>
+        <option value="single">Single</option>
+        <option value="married">Married</option>
+        <option value="engaged">Engaged</option>
+        <option value="na">Prefer not to say</option>
+      </select>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="field">
+      <label for="email">Email Address <span class="req">*</span></label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+    </div>
+    <div class="field">
+      <label for="phone">Mobile Number <span class="req">*</span></label>
+      <input type="tel" id="phone" name="phone" pattern="03[0-9]{2}-[0-9]{7}" placeholder="03XX-XXXXXXX" required title="Format: 0301-2345678">
+      <span class="hint">Format: 0301-2345678</span>
+    </div>
+  </div>
+  <div class="field">
+    <label for="photo">Profile Picture <span class="req">*</span></label>
+    <div class="upload-box" id="uploadBox">
+      <input type="file" id="photo" name="photo" accept="image/*" class="file-input" required>
+      <img id="photoPreview" class="avatar-preview" alt="Photo preview" src="">
+      <div class="upload-icon" id="uploadIcon">&#128247;</div>
+      <p>Click here to upload your photo</p>
+      <span class="hint">JPG, PNG or GIF &bull; max 2 MB</span>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-head"><span class="section-num">2</span><h2>Address &amp; Location</h2></div>
+  <div class="field">
+    <label for="address">Postal Address <span class="req">*</span></label>
+    <textarea id="address" name="address" placeholder="House #, Street, Area, Town..." required></textarea>
+  </div>
+  <div class="grid-2">
+    <div class="field">
+      <label for="province">Province <span class="req">*</span></label>
+      <select id="province" name="province" required>
+        <option value="">-- Select Province --</option>
+        <option value="punjab">Punjab</option>
+        <option value="sindh">Sindh</option>
+        <option value="kpk">Khyber Pakhtunkhwa</option>
+        <option value="balochistan">Balochistan</option>
+        <option value="gb">Gilgit-Baltistan</option>
+        <option value="ajk">Azad Jammu &amp; Kashmir</option>
+        <option value="ict">Islamabad Capital Territory</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="city">City <span class="req">*</span></label>
+      <select id="city" name="city" required>
+        <option value="">-- Select City --</option>
+        <optgroup label="Punjab">
+          <option value="lahore">Lahore</option>
+          <option value="rawalpindi">Rawalpindi</option>
+          <option value="faisalabad">Faisalabad</option>
+          <option value="multan">Multan</option>
+          <option value="gujranwala">Gujranwala</option>
+          <option value="bahawalpur">Bahawalpur</option>
+          <option value="sargodha">Sargodha</option>
+          <option value="sialkot">Sialkot</option>
+          <option value="sahiwal">Sahiwal</option>
+          <option value="gujrat">Gujrat</option>
+          <option value="jhelum">Jhelum</option>
+          <option value="dg-khan">Dera Ghazi Khan</option>
+        </optgroup>
+        <optgroup label="Sindh">
+          <option value="karachi">Karachi</option>
+          <option value="hyderabad">Hyderabad</option>
+          <option value="sukkur">Sukkur</option>
+          <option value="larkana">Larkana</option>
+          <option value="mirpurkhas">Mirpurkhas</option>
+          <option value="nawabshah">Nawabshah</option>
+          <option value="khairpur">Khairpur</option>
+        </optgroup>
+        <optgroup label="Khyber Pakhtunkhwa">
+          <option value="peshawar">Peshawar</option>
+          <option value="mardan">Mardan</option>
+          <option value="abbottabad">Abbottabad</option>
+          <option value="mingora">Mingora (Swat)</option>
+          <option value="kohat">Kohat</option>
+          <option value="nowshera">Nowshera</option>
+          <option value="charsadda">Charsadda</option>
+        </optgroup>
+        <optgroup label="Balochistan">
+          <option value="quetta">Quetta</option>
+          <option value="turbat">Turbat</option>
+          <option value="khuzdar">Khuzdar</option>
+          <option value="gwadar">Gwadar</option>
+          <option value="sibi">Sibi</option>
+        </optgroup>
+        <optgroup label="Gilgit-Baltistan">
+          <option value="gilgit">Gilgit</option>
+          <option value="skardu">Skardu</option>
+          <option value="hunza">Hunza</option>
+        </optgroup>
+        <optgroup label="Azad Kashmir">
+          <option value="muzaffarabad">Muzaffarabad</option>
+          <option value="mirpur">Mirpur</option>
+          <option value="kotli">Kotli</option>
+          <option value="rawalakot">Rawalakot</option>
+        </optgroup>
+      </select>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="field">
+      <label for="zip">Postal / ZIP Code</label>
+      <input type="text" id="zip" name="zip" placeholder="e.g. 46000" pattern="[0-9]{5}" title="5 digit code">
+    </div>
+    <div class="field">
+      <label for="residence">Residence Type</label>
+      <select id="residence" name="residence">
+        <option value="">-- Select --</option>
+        <option value="own">Own house</option>
+        <option value="rental">Rental</option>
+        <option value="hostel">Hostel</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-head"><span class="section-num">3</span><h2>Academic Details</h2></div>
+  <div class="grid-2">
+    <div class="field">
+      <label for="institute">University / Institute <span class="req">*</span></label>
+      <input type="text" id="institute" name="institute" placeholder="e.g. COMSATS University" required>
+    </div>
+    <div class="field">
+      <label for="degree">Degree / Program <span class="req">*</span></label>
+      <select id="degree" name="degree" required>
+        <option value="">-- Select Degree --</option>
+        <option>BS Computer Science</option>
+        <option>BS Software Engineering</option>
+        <option>BS Information Technology</option>
+        <option>BS Data Science</option>
+        <option>BS Artificial Intelligence</option>
+        <option>BBA / Management Sciences</option>
+        <option>BS Commerce / Accounting</option>
+        <option>BS Media &amp; Communication</option>
+        <option>Other</option>
+      </select>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="field">
+      <label for="cgpa">Current CGPA <span class="req">*</span></label>
+      <input type="number" id="cgpa" name="cgpa" min="0" max="4" step="0.01" placeholder="e.g. 3.24" required>
+    </div>
+    <div class="field">
+      <label for="year">Passing / Expected Year <span class="req">*</span></label>
+      <input type="number" id="year" name="year" min="1990" max="2030" placeholder="e.g. 2027" required>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="field">
+      <label for="gradMonth">Graduation Month</label>
+      <input type="month" id="gradMonth" name="gradMonth">
+      <span class="hint">Month + year picker (mini calendar)</span>
+    </div>
+    <div class="field">
+      <label>Mode of Study</label>
+      <div class="option-group">
+        <label class="option"><input type="radio" name="studyMode" value="regular"> Regular</label>
+        <label class="option"><input type="radio" name="studyMode" value="evening"> Evening</label>
+        <label class="option"><input type="radio" name="studyMode" value="distance"> Distance Learning</label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-head"><span class="section-num">4</span><h2>Skills &amp; Languages</h2></div>
+  <div class="field">
+    <label>Technical &amp; Professional Skills (tick all that apply) <span class="req">*</span></label>
+    <div class="chip-group">
+      <label class="chip"><input type="checkbox" name="skills" value="HTML/CSS" required><span>HTML &amp; CSS</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="JavaScript"><span>JavaScript</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="React"><span>React</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="PHP"><span>PHP</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="Python"><span>Python</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="SQL"><span>SQL / Databases</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="MS Office"><span>MS Office</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="Graphic Design"><span>Graphic Design</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="Video Editing"><span>Video Editing</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="Digital Marketing"><span>Digital Marketing</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="Content Writing"><span>Content Writing</span></label>
+      <label class="chip"><input type="checkbox" name="skills" value="Data Analysis"><span>Data Analysis</span></label>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="field">
+      <label for="otherSkills">Other Skills (comma separated)</label>
+      <input type="text" id="otherSkills" name="otherSkills" placeholder="e.g. Public Speaking, SEO">
+    </div>
+    <div class="field">
+      <label for="skillLevel">Overall Skill Level</label>
+      <select id="skillLevel" name="skillLevel">
+        <option value="">-- Select --</option>
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+      </select>
+    </div>
+  </div>
+  <div class="field">
+    <label>Languages You Speak</label>
+    <div class="chip-group">
+      <label class="chip"><input type="checkbox" name="languages" value="Urdu"><span>Urdu</span></label>
+      <label class="chip"><input type="checkbox" name="languages" value="English"><span>English</span></label>
+      <label class="chip"><input type="checkbox" name="languages" value="Punjabi"><span>Punjabi</span></label>
+      <label class="chip"><input type="checkbox" name="languages" value="Sindhi"><span>Sindhi</span></label>
+      <label class="chip"><input type="checkbox" name="languages" value="Pashto"><span>Pashto</span></label>
+      <label class="chip"><input type="checkbox" name="languages" value="Balochi"><span>Balochi</span></label>
+      <label class="chip"><input type="checkbox" name="languages" value="Saraiki"><span>Saraiki</span></label>
+      <label class="chip"><input type="checkbox" name="languages" value="Kashmiri"><span>Kashmiri</span></label>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-head"><span class="section-num">5</span><h2>Internship Preferences</h2></div>
+  <div class="grid-2">
+    <div class="field">
+      <label for="department">Preferred Department <span class="req">*</span></label>
+      <select id="department" name="department" required>
+        <option value="">-- Select Department --</option>
+        <option>Software Development</option>
+        <option>Web Development</option>
+        <option>Mobile App Development</option>
+        <option>AI &amp; Machine Learning</option>
+        <option>Data Analytics</option>
+        <option>Graphic Design</option>
+        <option>Digital Marketing</option>
+        <option>HR &amp; Administration</option>
+        <option>Finance &amp; Accounts</option>
+        <option>Content &amp; Media</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Work Mode <span class="req">*</span></label>
+      <div class="option-group">
+        <label class="option"><input type="radio" name="workMode" value="onsite" required> On-site</label>
+        <label class="option"><input type="radio" name="workMode" value="remote"> Remote</label>
+        <label class="option"><input type="radio" name="workMode" value="hybrid"> Hybrid</label>
+      </div>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="field">
+      <label for="duration">Preferred Duration <span class="req">*</span></label>
+      <select id="duration" name="duration" required>
+        <option value="">-- Select Duration --</option>
+        <option value="1m">1 Month</option>
+        <option value="2m">2 Months</option>
+        <option value="3m">3 Months</option>
+        <option value="6m">6 Months</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="startDate">Available From (Date) <span class="req">*</span></label>
+      <input type="date" id="startDate" name="startDate" required>
+      <span class="hint">Click the field to open the calendar &uarr;</span>
+    </div>
+  </div>
+  <div class="field">
+    <label for="hours">Weekly Commitment (Hours)</label>
+    <div class="range-wrap">
+      <input type="range" id="hours" name="hours" min="5" max="40" step="5" value="15">
+      <span class="range-out" id="hoursOut">15 hrs</span>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="field">
+      <label for="prefTime">Preferred Daily Time Slot</label>
+      <input type="time" id="prefTime" name="prefTime">
+      <span class="hint">Time picker</span>
+    </div>
+    <div class="field">
+      <label for="interviewSlot">Suggested Interview Date &amp; Time</label>
+      <input type="datetime-local" id="interviewSlot" name="interviewSlot">
+      <span class="hint">Combined date + time picker</span>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="field">
+      <label for="orientWeek">Preferred Orientation Week</label>
+      <input type="week" id="orientWeek" name="orientWeek">
+      <span class="hint">Week number picker (calendar)</span>
+    </div>
+    <div class="field">
+      <label for="favColor">Choose Your Badge Colour</label>
+      <input type="color" id="favColor" name="favColor" value="#7c3aed">
+      <span class="hint">Colour swatch picker</span>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-head"><span class="section-num">6</span><h2>Links &amp; About You</h2></div>
+  <div class="grid-2">
+    <div class="field">
+      <label for="linkedin">LinkedIn Profile URL</label>
+      <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/username">
+    </div>
+    <div class="field">
+      <label for="github">GitHub / Portfolio URL</label>
+      <input type="url" id="github" name="github" placeholder="https://github.com/username">
+    </div>
+  </div>
+  <div class="field">
+    <label for="bio">Short Bio / Why this internship? <span class="req">*</span></label>
+    <textarea id="bio" name="bio" placeholder="Tell us a little about yourself and why you are the best fit..." required></textarea>
+  </div>
+  <div class="grid-2">
+    <div class="field">
+      <label for="referral">Referral Code (if any)</label>
+      <input type="text" id="referral" name="referral" placeholder="e.g. REF-2026">
+    </div>
+    <div class="field">
+      <label for="hearAbout">How did you hear about us?</label>
+      <select id="hearAbout" name="hearAbout">
+        <option value="">-- Select --</option>
+        <option>University</option>
+        <option>Social Media</option>
+        <option>Friends / Family</option>
+        <option>Job Portal</option>
+        <option>Other</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="field" style="margin-top:14px;">
+    <label class="option"><input type="checkbox" id="newsletter" name="newsletter" value="yes"> Subscribe me to internship alerts &amp; career tips</label>
+  </div>
+  <div class="field">
+    <label class="option"><input type="checkbox" id="terms" name="terms" required> I agree to the <a href="#" style="color:var(--violet);">Terms &amp; Conditions</a> and confirm all the information is correct. <span class="req">*</span></label>
+  </div>
+  <input type="hidden" name="formVersion" value="1.0">
+  <input type="hidden" name="submittedAt" id="submittedAt">
+  <input type="hidden" name="applicationID" id="applicationID">
+</div>
+
+<div class="actions">
+  <button type="reset" class="btn btn-reset">&#8635; Clear Form</button>
+  <button type="submit" class="btn btn-submit">&#128640; Submit Application</button>
+</div>
+
+<div id="successBox"></div>
+<p class="footer-note">&#169; 2026 &bull; Internship Program &bull; For queries email <a href="mailto:hr@example.com">hr@example.com</a></p>
+</form>
+</body>
+</html>

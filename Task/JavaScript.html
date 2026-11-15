@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Bulb</title>
+</head>
+<style>
+    button {
+        margin: 15px;
+        padding: 10px;
+        font-size: 16px;
+    }
+</style>
+
+<body style="text-align : center;">
+    <div style="display: flex; flex-direction: row; text-align: center; align-items: center; min-height: 100vh;">
+        <div style="display: flex; flex-direction: column; width: 50%; align-items: center;">
+            <button onclick="document.getElementById('myImage').src='/Task/01_bulb_off.png'">Turn off the light</button>
+            <button onclick="document.getElementById('myImage').src='/Task/02_bulb_on_yellow.png'">Turn on the light</button>
+            <button onclick="document.getElementById('myImage').src='/Task/03_bulb_blue.png'">Blue light</button>
+            <button onclick="document.getElementById('myImage').src='/Task/05_bulb_red.png'">Red light</button>
+            <button onclick="document.getElementById('myImage').src='/Task/04_bulb_green.png'">Green light</button>
+        </div>
+        <div>
+            <img id="myImage" src="/Task/01_bulb_off.png" style="width:500px">
+        </div>
+    </div>
+</body>
+
+</html>
