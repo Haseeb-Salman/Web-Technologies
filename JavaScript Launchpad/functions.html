@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn JavaScript functions, parameters, return values, arrow functions, and reusable code.">
+  <title>JavaScript Functions — Java Script</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand" href="index.html"><span class="brand-mark">JS</span> Java Script<span class="brand-dot">.</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="syntax.html">Syntax</a></li>
+          <li class="nav-item"><a class="nav-link" href="datatypes.html">Data types</a></li>
+          <li class="nav-item"><a class="nav-link" href="variables.html">Variables</a></li>
+          <li class="nav-item"><a class="nav-link" href="operators.html">Operators</a></li>
+          <li class="nav-item"><a class="nav-link" href="functions.html">Functions</a></li>
+        </ul>
+        <a class="btn btn-nav" href="playground.html">Open playground <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="lesson-hero">
+      <div class="container lesson-hero-inner">
+        <div class="eyebrow">05 / REUSABLE RECIPES</div>
+        <h1>Say it once. <span class="gradient-text">Use it often.</span></h1>
+        <p>Functions are reusable blocks of code. Give one a name, pass in information, and let it return a useful result.</p>
+        <div class="lesson-meta"><span>ƒ &nbsp; Beginner friendly</span><span>5 min read</span></div>
+        <div class="lesson-orb orb-pink">ƒ()</div>
+      </div>
+    </section>
+
+    <section class="section-pad lesson-content">
+      <div class="container lesson-layout">
+        <article class="lesson-article">
+          <h2 id="declaration">A function is a reusable recipe</h2>
+          <p>Declare a function with the <code>function</code> keyword, a name, parentheses, and a block in curly braces. The code inside runs when you call the function by name.</p>
+          <div class="code-card">
+            <div class="code-card-top"><span>✦ &nbsp; Define, then call</span><span>JAVASCRIPT</span></div>
+            <pre><code><span class="code-purple">function</span> sayHello() {
+  console.log(<span class="code-green">"Hello there!"</span>);
+}
+
+sayHello(); <span class="code-muted">// Runs the function</span></code></pre>
+          </div>
+
+          <h2 id="parameters">Pass information in</h2>
+          <p>Parameters are the names in a function declaration. Arguments are the actual values you pass when you call it.</p>
+          <div class="code-card">
+            <div class="code-card-top"><span>✦ &nbsp; Function with a parameter</span><span>JAVASCRIPT</span></div>
+            <pre><code><span class="code-purple">function</span> greet(name) {
+  console.log(<span class="code-green">`Hi, &#36;{name}!`</span>);
+}
+
+greet(<span class="code-green">"Sam"</span>); <span class="code-muted">// Hi, Sam!</span></code></pre>
+          </div>
+
+          <h2 id="return">Return a result</h2>
+          <p>Use <code>return</code> to send a value back from a function. Once a function returns, it has finished running.</p>
+          <div class="code-card">
+            <div class="code-card-top"><span>✦ &nbsp; Return a value</span><span>JAVASCRIPT</span></div>
+            <pre><code><span class="code-purple">function</span> add(first, second) {
+  <span class="code-purple">return</span> first + second;
+}
+
+<span class="code-purple">const</span> total = add(<span class="code-orange">3</span>, <span class="code-orange">4</span>);
+console.log(total); <span class="code-muted">// 7</span></code></pre>
+          </div>
+
+          <h2 id="arrows">A shorter arrow function</h2>
+          <p>Arrow functions are a compact way to write functions. They're common in modern JavaScript, especially for short callbacks and transformations.</p>
+          <div class="code-card">
+            <div class="code-card-top"><span>✦ &nbsp; Arrow function</span><span>JAVASCRIPT</span></div>
+            <pre><code><span class="code-purple">const</span> double = (number) =&gt; number * <span class="code-orange">2</span>;
+console.log(double(<span class="code-orange">6</span>)); <span class="code-muted">// 12</span></code></pre>
+          </div>
+
+          <div class="note-card"><span class="note-icon">✳</span><div><strong>Keep functions focused</strong><p>A function that does one clear job is easier to test, reuse, and understand.</p></div></div>
+          <div class="lesson-next"><span>READY TO EXPERIMENT?</span><a href="playground.html">Open the playground <span aria-hidden="true">→</span></a></div>
+        </article>
+        <aside class="lesson-aside">
+          <div class="aside-card">
+            <div class="aside-label">IN THIS LESSON</div>
+            <a href="#declaration">01 &nbsp; Declarations</a>
+            <a href="#parameters">02 &nbsp; Parameters</a>
+            <a href="#return">03 &nbsp; Return values</a>
+            <a href="#arrows">04 &nbsp; Arrow functions</a>
+            <hr>
+            <a class="aside-cta" href="playground.html">Try these examples ↗</a>
+          </div>
+          <div class="aside-tip"><span>✦</span><strong>Good to know</strong><p>Functions can call other functions—compose small building blocks to solve bigger problems.</p></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="navbar-brand brand" href="index.html"><span class="brand-mark">JS</span> Java Script<span class="brand-dot">.</span></a>
+      <span>Made for curious minds. Keep experimenting.</span>
+      <a href="playground.html">Try the playground <span aria-hidden="true">↗</span></a>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
